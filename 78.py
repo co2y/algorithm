@@ -54,5 +54,5 @@ class Solution(object):
                 cur.append(numsSorted[j])
             j+=1
         result.append(cur)
-
+        
     return result
