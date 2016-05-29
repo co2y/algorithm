@@ -5,3 +5,5 @@ class Solution(object):
         :rtype: str
         """
         return s[::-1]
+
+java use StringBuilder not String
