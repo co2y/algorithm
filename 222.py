@@ -5,6 +5,12 @@
 #         self.left = None
 #         self.right = None
 
+"""
+comparing the depth between left sub tree and right sub tree, 
+If it is equal, it means the left sub tree is a perfect binary tree, not only a full binary tree. 
+If it is not , it means the right sub tree is a perfect binary tree.
+"""
+
 class Solution(object):
         
     def countNodes(self, root):
