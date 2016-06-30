@@ -1,3 +1,4 @@
+# 通过增加冗余行和列（第一行第一列） 使得对于空的情况也能计算正确
 class Solution(object):
     def numDistinct(self, s, t):
         """
