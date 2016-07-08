@@ -1,4 +1,5 @@
 # 这题关键在于最多只有两个数可能满足要求
+# 这个算法不是找出现最多的，而是找可能占主导地位的
 class Solution(object):
     def majorityElement(self, nums):
         """
