@@ -13,6 +13,9 @@ class Solution(object):
         :type n: int
         :rtype: List[TreeNode]
         """
+        if n == 0:
+            return []
+        
         def node(val, left, right):
             node = TreeNode(val)
             node.left = left
