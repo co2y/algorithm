@@ -29,3 +29,16 @@ class Solution(object):
                     for right in trees(root+1, last)] or [None]
                     
         return trees(1, n)
+
+def generateTrees(self, n):
+    def generate(first, last):
+        trees = []
+        for root in range(first, last+1):
+            for left in generate(first, root-1):
+                for right in generate(root+1, last):
+                    node = TreeNode(root)
+                    node.left = left
+                    node.right = right
+                    trees += node,
+        return trees or [None]
+    return generate(1, n)
