@@ -1,3 +1,4 @@
+# 每加入一个数都保存当前的最小值
 class MinStack(object):
 
     def __init__(self):
