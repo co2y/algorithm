@@ -24,6 +24,7 @@ class Solution(object):
                 self.board[row][col] = num
                 if self.solve():
                     return True
+                    #backtrace
                 self.board[row][col] = "."
         return False
             
