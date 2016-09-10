@@ -31,6 +31,7 @@ class Solution(object):
             reverse = cur
             cur = next
 
+        # key!    
         pre.next.next = cur
         pre.next = reverse
 
