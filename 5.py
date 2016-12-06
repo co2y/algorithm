@@ -7,7 +7,7 @@ class Solution(object):
         """
         t = '$#' + '#'.join(s) + '#_'
         p = [0] * 4010
-        mx, mmid, mmax, right = 0, 0, 0, 0
+        mx, mid, mmax, right = 0, 0, 0, 0
         for i in range(1, len(t) - 1):
             if mx > i:
                 p[i] = min(p[2 * mid - i], mx - i)
