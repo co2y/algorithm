@@ -6,8 +6,8 @@ class Solution(object):
         """
         return s[::-1]
 
-java use StringBuilder not String
-python str 不能直接赋值，例如s[1] = '5'
+# java use StringBuilder not String
+# python str 不能直接赋值，例如s[1] = '5'
 
 class Solution(object):
     def reverseString(self, s):
@@ -23,4 +23,3 @@ class Solution(object):
             left += 1
             right -= 1
         return "".join(ss)
-        

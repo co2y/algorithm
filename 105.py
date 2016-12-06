@@ -14,7 +14,7 @@ class Solution(object):
         """
         if not preorder or not inorder:
             return
-        
+
         node = TreeNode(preorder[0])
         node_index = inorder.index(preorder[0])
         preorder.pop(0)
@@ -23,7 +23,7 @@ class Solution(object):
         return node
 
 
-# 卵用slice会MLE 例如
+# 乱用slice会MLE 例如
 if inorder:
         node = TreeNode(preorder[0])
         node_index = inorder.index(preorder[0])
@@ -31,7 +31,7 @@ if inorder:
         node.left = self.buildTree(preorder[1:l_len+1], inorder[0:l_len])
         node.right = self.buildTree(preorder[l_len+1:], inorder[l_len+1:])
         return node
-        
+
 # ac
 if inorder:
         node = TreeNode(preorder[0])

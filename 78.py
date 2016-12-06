@@ -10,13 +10,13 @@ class Solution(object):
         res = []
         self.dfs(nums, 0, [], res)
         return res
-    
+
     def dfs(self, nums, start, path, res):
         res.append(path)
         for i in range(start, len(nums)):
             self.dfs(nums, i+1, path+[nums[i]], res)
 
-            
+
 class Solution(object):
     def subsets(self, nums):
         """
@@ -43,16 +43,16 @@ class Solution(object):
         :type nums: List[int]
         :rtype: List[List[int]]
         """
-    result  = []
-    numsSorted = sorted(nums)
-    for i in range(1 << len(nums)):
-        j = 0
-        cur = []
+        result  = []
+        numsSorted = sorted(nums)
+        for i in range(1 << len(nums)):
+            j = 0
+            cur = []
 
-        while j <= i:
-            if (1 << j) & i != 0:
-                cur.append(numsSorted[j])
-            j+=1
-        result.append(cur)
-        
-    return result
+            while j <= i:
+                if (1 << j) & i != 0:
+                    cur.append(numsSorted[j])
+                j+=1
+            result.append(cur)
+
+        return result

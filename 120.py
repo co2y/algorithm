@@ -6,12 +6,11 @@ class Solution(object):
         """
         if not triangle:
             return 0
-        
+
         l = len(triangle)
-        ans = 0
         
         dp = triangle[-1][:]
-        
+
         for i in range(l-2,-1,-1):
             temp = []
 
@@ -20,4 +19,3 @@ class Solution(object):
 
             dp = temp[:]
         return dp[0]
-        

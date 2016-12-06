@@ -1,39 +1,38 @@
-""" TLE
-class Solution(object):
-    def trap(self, height):
-        """
-        :type height: List[int]
-        :rtype: int
-        """
-        length = len(height)
-        if not length:
-            return 0
-        maxnumber = max(height)
-        ans = 0
-        for i in range(maxnumber):
-            left = 0
-            right = length - 1
-            hasleft = 0
-            hasright = 0
-            while left < right:
-                if height[left] == 0 and hasleft == 0:
-                    left += 1
-                else:
-                    hasleft = 1
-                if height[right] == 0 and hasright == 0:
-                    right -= 1
-                else:
-                    hasright = 1
-                if hasleft and hasright and height[left] > 0:
-                    left += 1
-                elif hasleft and hasright and height[left] == 0:
-                    ans += 1
-                    left += 1
-            for j in range(length):
-                if height[j] > 0:
-                    height[j] = height[j] - 1
-        return ans
-"""
+# TLE
+# class Solution(object):
+#     def trap(self, height):
+#         """
+#         :type height: List[int]
+#         :rtype: int
+#         """
+#         length = len(height)
+#         if not length:
+#             return 0
+#         maxnumber = max(height)
+#         ans = 0
+#         for i in range(maxnumber):
+#             left = 0
+#             right = length - 1
+#             hasleft = 0
+#             hasright = 0
+#             while left < right:
+#                 if height[left] == 0 and hasleft == 0:
+#                     left += 1
+#                 else:
+#                     hasleft = 1
+#                 if height[right] == 0 and hasright == 0:
+#                     right -= 1
+#                 else:
+#                     hasright = 1
+#                 if hasleft and hasright and height[left] > 0:
+#                     left += 1
+#                 elif hasleft and hasright and height[left] == 0:
+#                     ans += 1
+#                     left += 1
+#             for j in range(length):
+#                 if height[j] > 0:
+#                     height[j] = height[j] - 1
+#         return ans
 
 class Solution(object):
     def trap(self, height):
