@@ -12,8 +12,9 @@ void myinsert(int* num, int len, int index, int target){
 }
 
 int bs(int* num, int len, int target){
-    int left=1;
-    int right=len;
+    // if (len < 1) return 0;
+    int left=0;
+    int right=len-1;
     while(left <= right){
         int mid = left+(right-left) / 2;
         if (num[mid]==target) {
@@ -31,7 +32,7 @@ int bs(int* num, int len, int target){
             }
         }
     }
-    return right;
+    return left;
 }
 
 int main(){
@@ -47,8 +48,10 @@ int main(){
     int snum[300001];
     int index;
     for (j=1; j<=n; j++){
-        index = bs(snum, j, number[j]);
-        ans = ans+index;
+        index = bs(snum, j-1, number[j]);
+        printf("%d\n", index);
+        ans = ans+(j-1-index);
+        // printf("%lld\n", ans);
         myinsert(snum, j, index, number[j]);
     }
     printf("%lld\n", ans);
