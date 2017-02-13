@@ -29,9 +29,9 @@ class Solution(object):
                     temp = temp + str(third)
                     first = second
                     second = third
-                    if len(temp) > n - j:
+                    if len(temp) >= n - j:
                         break
-                if temp.startswith(num[j:]):
+                if temp == num[j:]:
                     return True
 
         return False
