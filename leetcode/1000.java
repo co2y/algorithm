@@ -23,7 +23,7 @@ class Solution {
         // init: dp[i][i][1] = 0 (Already a pile) others = max
         // ans: dp[1][len][1] (len is the stones number)   
         int[][][] dp = new int[len + 1][len + 1][sizeOfEach + 1];
-        int max = 99999999;
+        int max = Integer.MAX_VALUE;
         for (i = 1; i <= len; i++) {
             for (j = 1; j <= len; j++) {
                 for (k = 1; k <= sizeOfEach; k++) {
@@ -41,10 +41,17 @@ class Solution {
                 j = i + l - 1;
                 for (k = 2; k <= sizeOfEach; k++) {
                     for (t = i; t < j; t++) {
+                        if (dp[i][t][k - 1] == max || dp[t + 1][j][1] == max) {
+                            continue;
+                        }
+
                         dp[i][j][k] = Math.min(dp[i][j][k], dp[i][t][k - 1] + dp[t + 1][j][1]);
                     }
                 }
 
+                if (dp[i][j][sizeOfEach] == max) {
+                    continue;
+                }
                 dp[i][j][1] = dp[i][j][sizeOfEach] + prefixSum[j] - prefixSum[i - 1];   
             }
         }
